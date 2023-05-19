@@ -1,7 +1,9 @@
 *{
+  
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 1.12rem;
 }
 
 .app{
@@ -10,10 +12,27 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-color: antiquewhite;
 }
 
 
+.container{
+  background-color:rgb(244, 212, 171);
+  padding : 2rem;
+  
+}
 .form-container{
   display: flex;
   flex-direction: column;
+  margin: .5rem 0 .5rem 0;
+}
+
+label,input,button{
+margin: .2rem;
+border-radius: .2rem;
+padding: 0.2rem;
+}
+button{
+  
+  background-color:antiquewhite;
 }
