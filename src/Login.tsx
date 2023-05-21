@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react"
 import axiosInstance from "./api/axios";
 
+
 type resp = {
     UserInfo :{
         accessToken : string,
@@ -10,6 +11,8 @@ type resp = {
 }
 
 const Login = () => {
+
+
     const [ username,setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
 
@@ -23,9 +26,11 @@ const Login = () => {
                 withCredentials: true
             }
         ). then((response) => response.data)
-        console.log(response);
+        
         if(response.UserInfo.accessToken){
-            location.replace('/home')
+            
+            
+            console.log(response);
         }
     }
 
