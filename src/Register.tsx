@@ -1,5 +1,4 @@
 import { FormEvent, useState } from 'react';
-
 import './index.css';
 
 type userDetails = {
@@ -25,7 +24,7 @@ const Register = () => {
     }
 
 return (
-    <>
+    < main className='app'>
     <section className='container'>
         <h1>Register</h1>
 
@@ -64,7 +63,7 @@ return (
             </span>
         </p>
     </section>
-    </>
+    </main>
     
 )
 }
