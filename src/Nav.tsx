@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import './index.css'
-
+import { Link } from 'react-router-dom';
 const Nav = () => {
     const {pathname} = useLocation(); 
     return (
@@ -8,10 +8,14 @@ const Nav = () => {
         <ul className='nav-bar'>
             <h1>App</h1>
             <li>
-                <a  className={pathname=='/home' ? 'visited':'unvisited'} href="/home" >Home</a>
+            
+                <Link  className={pathname=='/home' ? 'visited':'unvisited'} to="/home" >Home</Link>
             </li>
             <li>
-                <a  className={pathname=='/users' ? 'visited':'unvisited'} href="/users" >Users</a>
+                <Link  className={pathname=='/users' ? 'visited':'unvisited'} to="/users" >Users</Link>
+            </li>
+            <li>
+                <Link  className={pathname=='/' ? 'visited':'unvisited'} to="/" >login</Link>
             </li>
         </ul>
     </nav>

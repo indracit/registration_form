@@ -1,8 +1,10 @@
 import { FormEvent, useState } from "react"
 import axiosInstance from "./api/axios";
+import { useNavigate } from "react-router-dom";
+import useAuth from "./hooks/useAuth";
+import { useAuthType } from "./hooks/useAuth";
 
-
-type resp = {
+export type resp = {
     UserInfo :{
         accessToken : string,
         roles : string[]
@@ -10,9 +12,10 @@ type resp = {
     }
 }
 
+
 const Login = () => {
-
-
+    const { setAuth} = useAuth() as useAuthType
+    const navigate = useNavigate();
     const [ username,setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
 
@@ -28,9 +31,11 @@ const Login = () => {
         ). then((response) => response.data)
         
         if(response.UserInfo.accessToken){
-            
+            setAuth(response)
+            navigate('/home')
             
             console.log(response);
+            
         }
     }
 
